@@ -1,0 +1,15 @@
+@import '../../assets/styles/variables';
+.login-section {
+    background-color: $white;
+    margin-top: 20vh;
+    padding: 15px;
+    form {
+        .md-form {
+            i {
+                font-size: 20px;
+                top: 15px;
+                left: 15px;
+            }
+        }
+    }
+}
