@@ -9,6 +9,14 @@ export interface IBook {
   comments_count: string;
   comments: IComment[];
   description: string;
+  averageRating: string;
+  language: string;
+  pageCount: string;
+  previewLink: string;
+  publishedDate: string;
+  publisher: string;
+  ratingsCount: string;
+  subtitle: string;
 }
 
 export interface IComment {

@@ -7,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./create-book.component.scss']
 })
 export class CreateBookComponent implements OnInit {
-
+  newBook;
+  toggleNewBookInfo = false;
   constructor(private libraryService: LibraryService) { }
   search: string;
   ngOnInit() {
@@ -19,8 +20,8 @@ export class CreateBookComponent implements OnInit {
         console.log(data);
         if (data.totalItems) {
           const bookData = data.items[0].volumeInfo;
-          const newBook = {
-            author: bookData.authors[0],
+          this.newBook = {
+            author: bookData.authors.join(', '),
             title: bookData.title,
             imageUrl: bookData.imageLinks.thumbnail,
             genre: bookData.categories.join(', '),
@@ -29,21 +30,42 @@ export class CreateBookComponent implements OnInit {
             likes_count: '',
             description: bookData.description,
             comments: [],
-            comments_count: ''
+            comments_count: '',
+            averageRating: bookData.averageRating,
+            language: bookData.language,
+            pageCount: bookData.pageCount,
+            subtitle: bookData.subtitle,
+            previewLink: bookData.previewLink,
+            publishedDate: bookData.publishedDate,
+            publisher: bookData.publisher,
+            ratingsCount: bookData.ratingsCount
           };
-          console.log(newBook);
-          this.libraryService.addBookData(newBook).subscribe(res => {
-            console.log(res);
-            alert('Book added successfully');
-            this.search = '';
-          }, err => {
-            alert('Error: Book already exists!');
-            this.search = '';
-          });
+          console.log(this.newBook);
+          this.toggleNewBookInfo = true;
         } else {
           alert('Error: Book not found!');
         }
       });
     }
+  }
+
+  saveIsbnBook() {
+    this.libraryService.addBookData(this.newBook).subscribe(res => {
+      console.log(res);
+      alert('Book added successfully');
+      this.search = '';
+      this.toggleNewBookInfo = false;
+      this.newBook = {};
+    }, err => {
+      alert('Error: Book already exists!');
+      this.search = '';
+      this.newBook = {};
+      this.toggleNewBookInfo = false;
+    });
+  }
+  cancelIsbnBook() {
+    this.newBook = {};
+    this.search = '';
+    this.toggleNewBookInfo = false;
   }
 }

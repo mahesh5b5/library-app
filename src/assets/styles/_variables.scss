@@ -7,6 +7,14 @@ body {
     background-color: $light-grey;
 }
 
+.vr {
+    border-right: 1px solid $grey;
+}
+
+.vl {
+    border-left: 1px solid $grey;
+}
+
 .page-bg {
     padding-top: 56px;
     height: 100vh;
