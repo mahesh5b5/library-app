@@ -1,12 +1,121 @@
 {
-	"users": [{
-		"username": "admin",
-		"password": "admin123",
-		"created": "Thu Oct 12 2017 10:36:29 GMT+0530 (India Standard Time)",
-		"is_admin": true,
-		"my_books": []
-	}],
-	"books": [{
-
-	}]
+  "users": [
+    {
+      "username": "admin",
+      "password": "admin123",
+      "created": "Thu Oct 12 2017 10:36:29 GMT+0530 (India Standard Time)",
+      "is_admin": true,
+      "my_books": []
+    }
+  ],
+  "books": [
+    {
+      "author": "Walter Isaacson",
+      "title": "Steve Jobs",
+      "imageUrl": "http://books.google.com/books/content?id=8U2oAAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "genre": "Biography & Autobiography",
+      "isbn": "9781451648546",
+      "id": "9781451648546",
+      "likes_count": "",
+      "description": "Draws on more than forty interviews with Steve Jobs, as well as interviews with family members, friends, competitors, and colleagues to offer a look at the co-founder and leading creative force behind the Apple computer company.",
+      "comments": [],
+      "comments_count": ""
+    },
+    {
+      "author": "Warren Lehrer",
+      "title": "A Life in Books",
+      "imageUrl": "http://books.google.com/books/content?id=tuFamQEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      "genre": "Fiction",
+      "isbn": "193962102X",
+      "id": "193962102X",
+      "likes_count": "",
+      "description": "An illuminated novel containing 101 books within it (replete with cover designs), all written by a controversial author who finds himself in prison looking back on his life and career.A LIFE IN BOOKS: The Rise and Fall of Bleu Mobley is an illuminated novel containing 101 books within it, all written by Lehrer's protagonist who finds himself in prison looking back on his life and career. Nearly a year after the controversial author is thrown into a federal prison for refusing to reveal the name of a confidential source, he decides to break his silence. But it's not as simple as giving up a name to the grand jury. Over the course of one long night, in the darkness of his prison cell, he whispers his life story into a microcassette recorder, tracing his journey from the public housing project of his youth, to a career as a journalist, then experimental novelist, college professor, accidental bestselling author, pop-culture pundit, and unindicted prisoner.In A LIFE IN BOOKS, Mobley's autobiography/apologia is paired with a review of all 101 of his books. Each book is represented by its first-edition cover design and catalogue copy, and more than a third of his books are excerpted. The resulting retrospective contrasts the published writings (which read like short stories) with the author's confessional memoir, forming a most unusual portrait of a well-intentioned, obsessively inventive (but ethically challenged) visionary.Written and designed by award-winning author/artist Warren Lehrer , A LIFE IN BOOKS is an extraordinarily original, funny, heartwarming and heart-wrenching exploration of one man's use of books as a means of understanding himself, the people around him, and a half-century of American/global events. Rich with stories that spring from other stories, this genre-defying novel orchestrates a multicultural symphony of characters from Bleu's life and books: lovers, mothers, children, friends, enemies, teachers, students, runaways, rebels, thinkers, dreamers, believers, skeptics, the displaced and dispossessed. It celebrates the mysteries and contradictions of the creative process, and grapples with the future of the book as a medium, and the lines that separate truth, myth, and fiction. This four-color, full-length novel-containing over 101 hilarious and scrumptious book cover designs (and book-like objects)-fuses art and literature, and distinguishes itself as one of those books you'll want to hold in your hands, feast your eyes on, read andre-read, share with friends, and treasure for years to come.",
+      "comments": [],
+      "comments_count": ""
+    },
+    {
+      "author": "Henry Maurice Saxby",
+      "title": "Books in the Life of a Child",
+      "imageUrl": "http://books.google.com/books/content?id=EqsBNlm6dXgC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "genre": "Language Arts & Disciplines",
+      "isbn": "0732945208",
+      "id": "0732945208",
+      "likes_count": "",
+      "description": "Explores the history and development of children's literature in Australia",
+      "comments": [],
+      "comments_count": ""
+    },
+    {
+      "author": "Addy Pross",
+      "title": "What is Life?",
+      "imageUrl": "http://books.google.com/books/content?id=M_6YSuKCzVsC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "genre": "Science",
+      "isbn": "9780191650895",
+      "id": "9780191650895",
+      "likes_count": "",
+      "description": "Seventy years ago, Erwin Schrödinger posed a profound question: 'What is life, and how did it emerge from non-life?' This problem has puzzled biologists and physical scientists ever since. Living things are hugely complex and have unique properties, such as self-maintenance and apparently purposeful behaviour which we do not see in inert matter. So how does chemistry give rise to biology? What could have led the first replicating molecules up such a path? Now, developments in the emerging field of 'systems chemistry' are unlocking the problem. Addy Pross shows how the different kind of stability that operates among replicating molecules results in a tendency for chemical systems to become more complex and acquire the properties of life. Strikingly, he demonstrates that Darwinian evolution is the biological expression of a deeper, well-defined chemical concept: the whole story from replicating molecules to complex life is one continuous process governed by an underlying physical principle. The gulf between biology and the physical sciences is finally becoming bridged. This new edition includes an Epilogue describing developments in the concepts of fundamental forms of stability discussed in the book, and their profound implications. Oxford Landmark Science books are 'must-read' classics of modern science writing which have crystallized big ideas, and shaped the way we think.",
+      "comments": [],
+      "comments_count": ""
+    },
+    {
+      "author": "Nicole Howard",
+      "title": "The Book",
+      "imageUrl": "http://books.google.com/books/content?id=4WwdMJKXzhEC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "genre": "History",
+      "isbn": "031333028X",
+      "id": "031333028X",
+      "likes_count": "",
+      "description": "Introduces the history of the book, beginning with papyrus in ancient Egypt, through the development of the printing press, to current computer-based technologies, including its influence on societies and cultures around the world.",
+      "comments": [],
+      "comments_count": ""
+    },
+    {
+      "author": "John W. Armstrong",
+      "title": "Water of Life",
+      "imageUrl": "http://books.google.com/books/content?id=ijnR1UQpFm8C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "genre": "Medical",
+      "isbn": "0787313467",
+      "id": "0787313467",
+      "likes_count": "",
+      "description": "In this revolutionary treatise, J.W. Armstrong puts the compelling case that all diseases (except those caused by traumatism or structural disorders) can be cured by one simple means. The therapy is an entirely drugless system of healing that treats the body as a whole. Moreover, the only ingredient needed is a substance manufactured in the body itself, rich in mineral salts, hormones and other vital substances, namely human urine. It may seem strange to take back into the body something that the body is apparently discarding. Yet the theory is similar to the natural practice of organic composting. Fallen leaves, when dug back into the soil, provide valuable mineral salts to nourish new plant life. The same principle holds true for the human body.",
+      "comments": [],
+      "comments_count": ""
+    },
+    {
+      "author": "Abigail Williams",
+      "title": "The Social Life of Books",
+      "imageUrl": "http://books.google.com/books/content?id=6GMlDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "genre": "Literary Criticism",
+      "isbn": "9780300228106",
+      "id": "9780300228106",
+      "likes_count": "",
+      "description": "A vivid exploration of the evolution of reading as an essential social and domestic activity during the eighteenth century Two centuries before the advent of radio, television, and motion pictures, books were a cherished form of popular entertainment and an integral component of domestic social life. In this fascinating and vivid history, Abigail Williams explores the ways in which shared reading shaped the lives and literary culture of the time, offering new perspectives on how books have been used by their readers, and the part they have played in middle-class homes and families. Drawing on marginalia, letters and diaries, library catalogues, elocution manuals, subscription lists, and more, Williams offers fresh and fascinating insights into reading, performance, and the history of middle-class home life.",
+      "comments": [],
+      "comments_count": ""
+    },
+    {
+      "author": "Stacia Deutsch",
+      "title": "The Book of Life Movie Novelization",
+      "imageUrl": "http://books.google.com/books/content?id=gZhqBAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "genre": "Juvenile Fiction",
+      "isbn": "9781481423519",
+      "id": "9781481423519",
+      "likes_count": "",
+      "description": "Manolo hopes to become the best musician in San Angel and win the heart of his friend Maria, but after his father insists he carry on the family tradition and become a bullfighter, Manolo learns he must move forward to create his own destiny.",
+      "comments": [],
+      "comments_count": ""
+    },
+    {
+      "author": "Ashok Gulla",
+      "title": "Creating Values in Life",
+      "imageUrl": "http://books.google.com/books/content?id=hE-xLwGC1ywC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "genre": "Body, Mind & Spirit",
+      "isbn": "9781452000879",
+      "id": "9781452000879",
+      "likes_count": "",
+      "description": "Unfortunately, very few people these days talk about real values in life. What we stand for in life, and are we living up to these values are worth pondering. Are our aspirations in tune with the real purpose of life? It is the values that remind us often what to aspire in life. Most people value life and its achievements from the perspective of wealth and richness, but do not recognize trust, honesty, and contentment as forward looking attributes that help in overall satisfaction. Giving importance to external growth leaving behind inner development often leads to unbalance in life devoid of overall satisfaction. Much of the troubles in this world are that true values of life have narrowed down, skewed, ignored and misunderstood. This book deliberates different aspects of life in terms of personal, moral, spiritual, family and social values and how these can enrich life and fill its purpose. A wide range of topics include How to live an easier life; Thoughts on simplifying life; Virtues of Integrity; Mistakes we generally make; Control on impulsive mind; Being Successful in life; Benefits from silence; Communication with inner self; Creating love for others; How to think positive; How moral values get reinforced; Belief in natural justice; What is spirituality; Understanding self; How to find God; What does death mean to us; Good family values; Being part of whole universe; Universal brotherhood; Towards developing good values. Attempt has been made to describe large issues that are outcome of misdirected value system, and how best a person can move ahead in life by focusing on core values. The idea of writing this book is to facilitate readers to pause and think about what they aspire, and are these aspirations in tandem with broad purpose in life.",
+      "comments": [],
+      "comments_count": ""
+    }
+  ]
 }

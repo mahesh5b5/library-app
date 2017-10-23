@@ -1,3 +1,4 @@
+import { Router, Route } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
+  goRegister() {
+    this.router.navigateByUrl('/user/register');
+  }
+
+  goHome() {
+    this.router.navigateByUrl('/home');
+  }
 }

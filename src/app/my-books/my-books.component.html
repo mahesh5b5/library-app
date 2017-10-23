@@ -3,15 +3,15 @@
         <div class="row">
             <div class="col-md-12">
                 <!--Section: Products v.3-->
-                <section class="section pb-3" *ngIf="bookList.length">
+                <section class="section pb-3">
                     <!--Section heading-->
-                    <h3 class="section-heading h3 pt-4">Book List</h3>
+                    <h3 class="section-heading h3 pt-4">My Books</h3>
                     <hr/>
                     <!--Grid row-->
                     <div class="row">
                         <!--Grid column-->
-                        <div class="col-lg-3 col-md-3 mb-r" *ngFor="let book of bookList">
-                            <app-books [book]="book"></app-books>
+                        <div class="col-lg-2 col-md-3 mb-r">
+                            <app-books></app-books>
                         </div>
                         <!--Grid column-->
                     </div>

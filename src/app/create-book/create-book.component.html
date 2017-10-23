@@ -1,0 +1,26 @@
+<div class="page-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <!--Section: Products v.3-->
+                <section class="section pb-3">
+                    <!--Section heading-->
+                    <h3 class="section-heading h3 pt-4">Add Book</h3>
+                    <hr/>
+                    <!--Grid row-->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4>ISBN Search</h4>
+                            <form class="form-inline" autocomplete="false" (ngSubmit)="addBookIsbn(addIsbn.value)" #addIsbn="ngForm" novalidate>
+                                <input class="form-control" type="text" minlength="10" maxlength="13" [(ngModel)]="search" name="isbn" placeholder="ISBN Number">
+                                <button class="btn btn-indigo" type="submit">Search</button>
+                            </form>
+                        </div>
+                    </div>
+                    <!--Grid row-->
+                </section>
+                <!--Section: Products v.3-->
+            </div>
+        </div>
+    </div>
+</div>

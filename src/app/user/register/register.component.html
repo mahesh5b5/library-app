@@ -1,0 +1,37 @@
+<div class="view">
+    <div class="page-bg img-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 user-account-section z-depth-2 mx-auto">
+                    <form>
+                        <p class="h5 text-center mb-4">Create an Account</p>
+                        <div class="md-form">
+                            <i class="fa fa-trophy prefix grey-text"></i>
+                            <input type="text" id="defaultForm-email" class="form-control" mdbActive>
+                            <label for="defaultForm-email">Full Name</label>
+                        </div>
+                        <div class="md-form">
+                            <i class="fa fa-user prefix grey-text"></i>
+                            <input type="text" id="defaultForm-email" class="form-control" mdbActive>
+                            <label for="defaultForm-email">Username</label>
+                        </div>
+                        <div class="md-form">
+                            <i class="fa fa-lock prefix grey-text"></i>
+                            <input type="password" id="defaultForm-pass" class="form-control" mdbActive>
+                            <label for="defaultForm-pass">Password</label>
+                        </div>
+                        <div class="text-center">
+                            <button class="btn btn-indigo btn-block waves-light" mdbRippleRadius (click)="goLogin()">Register</button>
+                        </div>
+                    </form>
+                    <hr/>
+                    <div class="text-center">
+                        <p>Already have an account?</p>
+                        <button type="button" class="btn btn-amber btn-md" (click)="goLogin()">Login</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
