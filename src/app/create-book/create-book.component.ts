@@ -95,7 +95,7 @@ export class CreateBookComponent implements OnInit {
             publishedDate: bookData.publishedDate,
             publisher: bookData.publisher,
             ratingsCount: bookData.ratingsCount,
-            added_date: new Date(),
+            added_date: new Date()
           };
           console.log(this.newBook);
           this.toggleNewBookInfo = true;
