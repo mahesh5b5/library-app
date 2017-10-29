@@ -15,6 +15,10 @@ body {
     border-left: 1px solid $grey;
 }
 
+.form-control {
+    margin-bottom: 0.2rem;
+}
+
 .page-bg {
     padding-top: 56px;
     height: 100vh;
@@ -37,7 +41,7 @@ body {
 .user-account-section {
     z-index: 1;
     background-color: $white;
-    margin-top: 15vh;
+    margin-top: 10vh;
     padding: 15px;
     form {
         .md-form {

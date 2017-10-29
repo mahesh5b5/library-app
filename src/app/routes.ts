@@ -11,7 +11,7 @@ export const appRoutes: Routes = [
   { path: 'my-books', component: MyBooksComponent },
   { path: 'book-details/:id', component: BookDetailComponent },
   { path: '404', component: Error404Component },
-  { path: '', redirectTo: '/home', pathMatch: 'full' }
-  // { path: 'user'}
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'user', loadChildren: './user/user.module#UserModule' }
 ];
 

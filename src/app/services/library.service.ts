@@ -15,7 +15,7 @@ export class LibraryService {
       return <IBook[]>response.json();
     }).catch(this.handleError);
   }
-  getBookById(id) {
+  getBookById(id): Observable<IBook> {
     return this.http.get('http://localhost:3000/books/' + id).map((response: Response) => {
       return <IBook>response.json();
     }).catch(this.handleError);
@@ -25,7 +25,7 @@ export class LibraryService {
       return response.json();
     }).catch(this.handleError);
   }
-  addBookData(data): Observable<IBook[]> {
+  addBookData(data): Observable<IBook> {
     return this.http.post('http://localhost:3000/books', data).map((response: Response) => {
       return response.json();
     }).catch(this.handleError);

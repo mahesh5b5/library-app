@@ -1,4 +1,4 @@
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AuthService } from './services/auth.service';
 import { appRoutes } from './routes';
@@ -33,6 +33,7 @@ import { MyBooksComponent } from './my-books/my-books.component';
     BrowserModule,
     HttpModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(appRoutes),
     MDBBootstrapModule.forRoot()
   ],

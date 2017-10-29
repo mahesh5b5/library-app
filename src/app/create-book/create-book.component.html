@@ -2,23 +2,94 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <!--Section: Products v.3-->
                 <section class="section pb-3">
-                    <!--Section heading-->
                     <h3 class="section-heading h3 pt-4">Add Book </h3>
                     <hr/>
-                    <!--Grid row-->
                     <div class="row">
+
                         <div class="col-md-6">
-                            <h4><strong>ISBN Search mode</strong></h4>
-                            <form class="form-inline" autocomplete="false" (ngSubmit)="addBookIsbn(addIsbn.value)" #addIsbn="ngForm" novalidate>
+                            <h4>
+                                <strong>Manual entry mode</strong>
+                            </h4>
+                            <form class="form-group" autocomplete="off" (ngSubmit)="addBookManual(addManualForm.value)" [formGroup]="addManualForm">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="md-form">
+                                            <input type="text" [ngClass]="{ 'red lighten-4' : !validateTitle()}" placeholder="Title *" formControlName="title" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="md-form">
+                                            <input type="text" placeholder="Subtitle" formControlName="subtitle" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="md-form">
+                                            <input [ngClass]="{ 'red lighten-4' : !validateImageUrl()}" type="url" placeholder="Image URL *" formControlName="imageUrl" class="form-control">
+                                            <small class="indigo-text"><i class="fa fa-info-circle"></i> For best view experience use 250*280 resolution.</small>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="md-form">
+                                            <input type="text" [ngClass]="{ 'red lighten-4' : !validateIsbn()}" placeholder="ISBN *" formControlName="isbn" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="md-form">
+                                            <input type="text" [ngClass]="{ 'red lighten-4' : !validateAuthor()}" placeholder="Author *" formControlName="author" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="md-form">
+                                            <input type="text" [ngClass]="{ 'red lighten-4' : !validateGenre()}" placeholder="Genre *" formControlName="genre" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="md-form">
+                                            <input type="text" placeholder="Language" formControlName="language" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="md-form">
+                                            <input type="text" placeholder="Publisher" formControlName="publisher" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="md-form">
+                                            <input type="text" placeholder="Published Date" formControlName="publishedDate" class="form-control">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="md-form">
+                                            <textarea type="text" [ngClass]="{ 'red lighten-4' : !validateDescription()}" placeholder="Description *" formControlName="description" class="md-textarea" rows="5"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="text-right">
+                                            <button class="btn btn-blue-grey" type="reset">Reset</button>
+                                            <button class="btn btn-success" type="submit">Save Book</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-6 vl">
+                            <h4>
+                                <strong>ISBN Search mode</strong>
+                            </h4>
+                            <form class="form-inline" autocomplete="off" (ngSubmit)="addBookIsbn(addIsbn.value)" #addIsbn="ngForm" novalidate>
                                 <input class="form-control" type="text" minlength="10" maxlength="13" [(ngModel)]="search" name="isbn" placeholder="ISBN Number">
                                 <button class="btn btn-indigo" type="submit">Get Details</button>
                             </form>
                             <div class="col-md-12 z-depth-1 new-book-details" *ngIf="toggleNewBookInfo">
-                                <h5><strong>Book Details</strong></h5>
+                                <h5>
+                                    <strong>Book Details</strong>
+                                </h5>
                                 <img [src]="newBook.imageUrl" />
-                                <h6>{{newBook.title}} <small *ngIf="newBook.subtitle">- {{newBook.subtitle}}</small></h6>
+                                <h6>{{newBook.title}}
+                                    <small *ngIf="newBook.subtitle">- {{newBook.subtitle}}</small>
+                                </h6>
                                 <p *ngIf="newBook.author">Author - {{newBook.author}}</p>
                                 <p *ngIf="newBook.language">Language - {{newBook.language}}</p>
                                 <p *ngIf="newBook.publishedDate">Published Date - {{newBook.publishedDate}}</p>
@@ -26,21 +97,12 @@
                                 <p *ngIf="newBook.averageRating">Average Rating - {{newBook.averageRating}}</p>
                                 <div class="text-right">
                                     <button class="btn btn-blue-grey" (click)="cancelIsbnBook()">Cancel</button>
-                                    <button class="btn btn-success" (click)="saveIsbnBook()">Add Book</button>
+                                    <button class="btn btn-success" (click)="saveIsbnBook()">Save Book</button>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6 vl">
-                            <h4><strong>Manual entry mode</strong></h4>
-                            <!-- <form class="form-inline" autocomplete="false" (ngSubmit)="addBookIsbn(addIsbn.value)" #addIsbn="ngForm" novalidate>
-                                <input class="form-control" type="text" minlength="10" maxlength="13" [(ngModel)]="search" name="isbn" placeholder="ISBN Number">
-                                <button class="btn btn-indigo" type="submit">Search</button>
-                            </form> -->
-                        </div>
                     </div>
-                    <!--Grid row-->
                 </section>
-                <!--Section: Products v.3-->
             </div>
         </div>
     </div>
