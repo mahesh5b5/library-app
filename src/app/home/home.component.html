@@ -1,3 +1,31 @@
-<p>
-  home works!
-</p>
+<div class="page-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <!--Section: Products v.3-->
+                <section class="section pb-3" *ngIf="bookList.length">
+                    <!--Section heading-->
+                    <h3 class="section-heading h3 pt-4">Book List
+                        <select class="mdb-select pull-right">
+                          <option value="" disabled selected>Select Genre</option>
+                          <option value="1">Option 1</option>
+                          <option value="2">Option 2</option>
+                          <option value="3">Option 3</option>
+                      </select>
+                    </h3>
+                    <hr/>
+                    <!--Grid row-->
+                    <div class="row">
+                        <!--Grid column-->
+                        <div class="col-lg-3 col-md-3 mb-r" *ngFor="let book of bookList">
+                            <app-books [book]="book"></app-books>
+                        </div>
+                        <!--Grid column-->
+                    </div>
+                    <!--Grid row-->
+                </section>
+                <!--Section: Products v.3-->
+            </div>
+        </div>
+    </div>
+</div>

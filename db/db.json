@@ -1,12 +1,54 @@
 {
-	"users": [{
-		"username": "admin",
-		"password": "admin123",
-		"created": "Thu Oct 12 2017 10:36:29 GMT+0530 (India Standard Time)",
-		"is_admin": true,
-		"my_books": []
-	}],
-	"books": [{
-
-	}]
+    "users": [{
+        "id": "mahi",
+        "fullname": "mahesh 123",
+        "username": "mahi",
+        "password": "mahi123",
+        "is_admin": true,
+        "created": "2017-10-29T11:40:43.760Z",
+        "my_books": []
+    }],
+    "books": [{
+            "author": "Stephen Prince",
+            "title": "The Horror Film",
+            "imageUrl": "http://books.google.com/books/content?id=S6jKVfuQG3wC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "genre": "Performing Arts",
+            "isbn": "0813533635",
+            "id": "0813533635",
+            "subtitle": "",
+            "averageRating": "",
+            "ratingsCount": "",
+            "likes_count": "",
+            "description": "Focusing on recent postmodern examples, this is a collection of essays reviewing the history of the horror film and the psychological reasons for its persistent appeal.",
+            "comments": [],
+            "comments_count": "",
+            "language": "en",
+            "pageCount": 272,
+            "previewLink": "http://books.google.co.in/books?id=S6jKVfuQG3wC&printsec=frontcover&dq=isbn:0813533635&hl=&cd=1&source=gbs_api",
+            "publishedDate": "2004-01-01",
+            "publisher": "Rutgers University Press",
+            "added_date": "2017-10-28T20:30:17.708Z"
+        },
+        {
+            "title": "hello",
+            "subtitle": "hi",
+            "imageUrl": "https://i.pinimg.com/736x/67/cc/69/67cc6956d1754a4dfd493fbec5ca4503--january--my-books.jpg",
+            "author": "Mahesh",
+            "description": "hello this is a sample text book :)",
+            "publisher": "Mahesh",
+            "publishedDate": "2015",
+            "genre": "Fiction",
+            "language": "EN",
+            "isbn": "123334",
+            "id": "123334",
+            "added_date": "2017-10-29T17:10:44.761Z",
+            "likes_count": "",
+            "comments": [],
+            "comments_count": "",
+            "averageRating": "",
+            "pageCount": "",
+            "previewLink": "",
+            "ratingsCount": ""
+        }
+    ]
 }

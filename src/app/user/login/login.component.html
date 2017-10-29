@@ -1,0 +1,32 @@
+<div class="view">
+    <div class="page-bg img-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 user-account-section z-depth-2 mx-auto">
+                    <form autocomplete="off" [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
+                        <p class="h5 text-center mb-4">Sign in</p>
+                        <div class="md-form" [ngClass]="{'red lighten-4': !validateUsername()}">
+                            <i class="fa fa-user prefix grey-text"></i>
+                            <input formControlName="username" type="text" class="form-control" mdbActive placeholder="Username (4-8 Characters Only) *">
+                        </div>
+
+                        <div class="md-form" [ngClass]="{'red lighten-4': !validatePassword()}">
+                            <i class="fa fa-lock prefix grey-text"></i>
+                            <input formControlName="password" type="password" class="form-control" mdbActive placeholder="Password (4-8 Characters Only) *">
+                        </div>
+
+                        <div class="text-center">
+                            <button class="btn btn-indigo btn-block waves-light" type="submit" mdbRippleRadius>Login</button>
+                        </div>
+                    </form>
+                    <hr/>
+                    <div class="text-center">
+                        <p>Don't have an account?</p>
+                        <button type="button" class="btn btn-amber btn-md" (click)="goRegister()">Register account</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

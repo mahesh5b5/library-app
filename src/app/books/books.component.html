@@ -1,0 +1,24 @@
+<!--Card-->
+<div class="card" (click)="viewDetails(book.id)">
+    <!--Card image-->
+    <div class="view overlay hm-white-slight z-depth-1">
+        <img [src]="book.imageUrl" class="img-fluid" alt="">
+        <a>
+            <div class="mask"></div>
+        </a>
+    </div>
+    <!--Card image-->
+    <!--Card content-->
+    <div class="card-body text-center no-padding">
+        <h3 class="card-title"><strong>{{book.title}}</strong></h3>
+        <h5><span class="badge indigo">{{book.genre}}</span></h5>
+        <p>ISBN {{book.isbn}}</p>
+        <!-- <button (click)="addBookToSelf(book)" class="btn btn-block" [ngClass]="{'btn-danger': addedSelf, 'btn-indigo': !addedSelf}">
+          <span *ngIf="!addedSelf">Add to self</span>
+          <span *ngIf="addedSelf">Remove from self</span>
+        </button> -->
+
+    </div>
+    <!--Card content-->
+</div>
+<!--Card-->
