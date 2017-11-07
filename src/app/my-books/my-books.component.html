@@ -1,0 +1,32 @@
+<div class="page-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div *ngIf="!myBooks.length">
+                    <br/>
+                    <br/>
+                    <div class="col-md-12">
+                        <div class="card card-image" style="background-image: url(http://wallpaperspics.com/thumbs/25/5/gradient-background-252549.jpg);background-repeat: no-repeat;background-size: cover;">
+                            <div class="text-white text-center align-items-center py-5 px-4 my-5">
+                                <div class="text-center">
+                                    <h1 class="card-title pt-3 mb-5 font-bold"><strong>Uffo! You haven't borrowed any books</strong></h1>
+                                    <p class="mx-5 mb-5">Borrow a book by visiting book details. Click below to view all books.</p>
+                                    <a [routerLink]="['/home']" class="btn btn-outline-white btn-rounded"><i class="fa fa-clone left"></i> View all books</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <section class="section pb-3" *ngIf="myBooks.length">
+                    <h3 class="section-heading h3 pt-4">My Books</h3>
+                    <hr/>
+                    <div class="row">
+                        <div class="col-lg-3 col-md-3 mb-r" *ngFor="let book of myBooks">
+                            <app-books [book]="book"></app-books>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>

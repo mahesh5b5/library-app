@@ -1,0 +1,23 @@
+<!--Card-->
+<div class="card">
+    <!--Card image-->
+    <div class="view overlay hm-white-slight z-depth-1" (click)="viewDetails(book.id)">
+        <img [src]="book.imageUrl" class="img-fluid" alt="">
+        <a>
+            <div class="mask"></div>
+        </a>
+    </div>
+    <!--Card image-->
+    <!--Card content-->
+    <div class="card-body text-center no-padding" (click)="viewDetails(book.id)">
+        <h3 class="card-title"><strong>{{book.title}}</strong></h3>
+        <h5><span class="badge indigo">{{book.genre}}</span></h5>
+        <p>ISBN {{book.isbn}}</p>
+    </div>
+
+    <div *ngIf="delete" class="text-center no-padding">
+        <button (click)="deleteBook(book.id)" class="btn btn-danger btn-block btn-sm">Remove</button>
+    </div>
+    <!--Card content-->
+</div>
+<!--Card-->

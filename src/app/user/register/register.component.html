@@ -1,0 +1,38 @@
+<div class="view">
+    <div class="page-bg img-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-6 col-sm-8 col-lg-4 user-account-section z-depth-2 mx-auto">
+                    <form [formGroup]="registerForm" autocomplete="off" (ngSubmit)="register(registerForm.value)">
+                        <p class="h5 text-center mb-4">Create an Account</p>
+                        <div class="md-form" [ngClass]="{'red lighten-4': !validateFullname()}">
+                            <i class="fa fa-trophy prefix grey-text"></i>
+                            <input type="text" class="form-control" placeholder="Full Name *" formControlName="fullname" mdbActive>
+                        </div>
+                        <div class="md-form" [ngClass]="{'red lighten-4': !validateUsername()}">
+                            <i class="fa fa-user prefix grey-text"></i>
+                            <input type="text" placeholder="Username (4-8 Characters Only) *" formControlName="username" class="form-control" mdbActive>
+                        </div>
+                        <div class="md-form" [ngClass]="{'red lighten-4': !validatePassword()}">
+                            <i class="fa fa-lock prefix grey-text"></i>
+                            <input type="password" placeholder="Password (4-8 Characters Only) *" formControlName="password" class="form-control" mdbActive>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <input type="checkbox" formControlName="is_admin" class="filled-in" id="isadmin">
+                            <label for="isadmin"> <strong> Admin Access </strong></label>
+                        </div>
+                        <div class="text-center">
+                            <button class="btn btn-indigo btn-block waves-light" mdbRippleRadius type="submit">Register</button>
+                        </div>
+                    </form>
+                    <hr/>
+                    <div class="text-center">
+                        <p>Already have an account? &nbsp;&nbsp;<a href="javascript:void(0);" (click)="goLogin()"><strong>Login</strong></a></p>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

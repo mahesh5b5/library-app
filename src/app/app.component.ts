@@ -1,3 +1,4 @@
+import { FooterComponent } from './footer/footer.component';
 import { Component } from '@angular/core';
 import { MenuComponent } from './menu/menu.component';
 
