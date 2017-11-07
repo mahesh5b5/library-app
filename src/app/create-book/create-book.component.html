@@ -78,8 +78,8 @@
                             <h4>
                                 <strong>ISBN Search mode</strong>
                             </h4>
-                            <form class="form-inline" autocomplete="off" (ngSubmit)="addBookIsbn(addIsbn.value)" #addIsbn="ngForm" novalidate>
-                                <input class="form-control" type="text" minlength="10" maxlength="13" [(ngModel)]="search" name="isbn" placeholder="ISBN Number">
+                            <form class="form-inline" autocomplete="off" (ngSubmit)="addBookIsbn(addIsbn.value)" [formGroup]="addIsbn">
+                                <input [ngClass]="{'red lighten-4' : !validateIsbnSearch()}" class="form-control" type="text" formControlName="search" placeholder="ISBN Number">
                                 <button class="btn btn-indigo" type="submit">Get Details</button>
                             </form>
                             <div class="col-md-12 z-depth-1 new-book-details" *ngIf="toggleNewBookInfo">

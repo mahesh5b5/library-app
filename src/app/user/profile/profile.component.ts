@@ -1,4 +1,5 @@
-import { AuthService } from '../../services/auth.service';
+import { Title } from '@angular/platform-browser';
+import { UserService } from '../../services/user.service';
 import { Router } from '@angular/router';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
@@ -15,20 +16,15 @@ export class ProfileComponent implements OnInit {
   private fullname: FormControl;
   private password: FormControl;
   private is_admin: FormControl;
-  constructor(private router: Router, private authService: AuthService) { }
+  constructor(private router: Router, private userService: UserService, private title: Title) { }
 
   ngOnInit() {
-    if (localStorage.hasOwnProperty('userDetails')) {
-      this.userData = JSON.parse(localStorage.userDetails);
-    } else {
-      alert('Some error has occured. Please sign in!');
-      localStorage.clear();
-      this.router.navigateByUrl('/user/login');
-    }
-    this.username = new FormControl({ value: this.userData.username, disabled: true });
-    this.fullname = new FormControl(this.userData.fullname, [Validators.required, Validators.minLength(2)]);
+    this.title.setTitle('My Profile');
+    this.getUserData();
+    this.username = new FormControl({ value: '', disabled: true });
+    this.fullname = new FormControl('', [Validators.required, Validators.minLength(2)]);
     this.password = new FormControl('', [Validators.minLength(4), Validators.maxLength(8)]);
-    this.is_admin = new FormControl(this.userData.is_admin, Validators.required);
+    this.is_admin = new FormControl('', Validators.required);
 
     this.profileForm = new FormGroup({
       fullname: this.fullname,
@@ -44,17 +40,34 @@ export class ProfileComponent implements OnInit {
   validatePassword() {
     return this.password.valid || this.password.untouched;
   }
-
+  getUserData() {
+    if (localStorage.hasOwnProperty('userId')) {
+      this.userService.getUserById(localStorage.userId).subscribe(res => {
+        console.log(res);
+        this.userData = res[0];
+        this.profileForm.controls['username'].patchValue(this.userData.username);
+        this.profileForm.controls['fullname'].patchValue(this.userData.fullname);
+        this.profileForm.controls['is_admin'].patchValue(this.userData.is_admin);
+      }, err => {
+        alert('Some error has occured. Please sign in!');
+        localStorage.clear();
+        this.router.navigateByUrl('/user/login');
+      });
+    } else {
+      alert('Some error has occured. Please sign in!');
+      localStorage.clear();
+      this.router.navigateByUrl('/user/login');
+    }
+  }
   saveProfile(formData) {
     if (formData.password === '') {
       delete formData.password;
     }
     console.log(formData, this.username.value);
     if (this.profileForm.valid) {
-      this.authService.updateUser(formData, this.username.value).subscribe(res => {
+      this.userService.updateUser(formData, this.username.value).subscribe(res => {
         console.log(res);
         if (res) {
-          localStorage.userDetails = JSON.stringify(res);
           localStorage.is_admin = res.is_admin;
           alert('Updated successfully!');
           this.router.navigateByUrl('/home');

@@ -5,7 +5,7 @@ export interface IBook {
   genre: string;
   id: string;
   isbn: string;
-  likes_count?: string;
+  likes_count?: any;
   comments_count?: string;
   comments?: IComment[];
   description: string;
@@ -23,4 +23,5 @@ export interface IBook {
 export interface IComment {
   user: string;
   comment: string;
+  added: Date;
 }

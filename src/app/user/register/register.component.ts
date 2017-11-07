@@ -1,5 +1,6 @@
+import { Title } from '@angular/platform-browser';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from '../../services/auth.service';
+import { UserService } from '../../services/user.service';
 import { IUser } from '../../interfaces/IUser';
 import { Component, OnInit } from '@angular/core';
 import { Route, Router } from '@angular/router';
@@ -17,9 +18,10 @@ export class RegisterComponent implements OnInit {
   private fullname: FormControl;
   private password: FormControl;
   private is_admin: FormControl;
-  constructor(private router: Router, private authService: AuthService) { }
+  constructor(private router: Router, private userService: UserService, private titleService: Title) { }
 
   ngOnInit() {
+    this.titleService.setTitle('Create account');
     this.fullname = new FormControl('', [Validators.required, Validators.minLength(2)]);
     this.username = new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(8)]);
     this.password = new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(8)]);
@@ -49,7 +51,8 @@ export class RegisterComponent implements OnInit {
     if (this.registerForm.valid) {
       formData.created = new Date();
       formData.my_books = [];
-      this.authService.createUser(formData).subscribe(res => {
+      formData.liked_books = [];
+      this.userService.createUser(formData).subscribe(res => {
         // console.log(res);
         if (res) {
           alert('Registered successfully!');

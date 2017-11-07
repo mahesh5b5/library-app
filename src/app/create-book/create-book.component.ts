@@ -1,3 +1,4 @@
+import { Title } from '@angular/platform-browser';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { LibraryService } from '../services/library.service';
 import { Component, OnInit } from '@angular/core';
@@ -9,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateBookComponent implements OnInit {
   newBook;
+  private addIsbn: FormGroup;
   private addManualForm: FormGroup;
   private title: FormControl;
   private subtitle: FormControl;
@@ -20,11 +22,17 @@ export class CreateBookComponent implements OnInit {
   private imageUrl: FormControl;
   private publisher: FormControl;
   private author: FormControl;
-
+  private search: FormControl;
   toggleNewBookInfo = false;
-  constructor(private libraryService: LibraryService) { }
-  search: string;
+  constructor(private libraryService: LibraryService, private titleService: Title) { }
   ngOnInit() {
+    this.titleService.setTitle('Add New book');
+    // Search
+    this.search = new FormControl('', [Validators.required, Validators.minLength(10), Validators.maxLength(13)]);
+    this.addIsbn = new FormGroup({
+      search: this.search
+    });
+    // Manual
     this.title = new FormControl('', [Validators.required]);
     this.subtitle = new FormControl('');
     this.author = new FormControl('', [Validators.required]);
@@ -68,12 +76,13 @@ export class CreateBookComponent implements OnInit {
   validateGenre() {
     return this.genre.valid || this.genre.untouched;
   }
+  validateIsbnSearch() {
+    return this.search.valid || this.search.untouched;
+  }
 
   addBookIsbn(formData) {
-    console.log(formData);
-    if (formData.isbn) {
-      this.libraryService.addBookIsbn(formData.isbn).subscribe(data => {
-        console.log(data);
+    if (this.addIsbn.valid) {
+      this.libraryService.addBookIsbn(formData.search).subscribe(data => {
         if (data.totalItems) {
           const bookData = data.items[0].volumeInfo;
           this.newBook = {
@@ -83,7 +92,7 @@ export class CreateBookComponent implements OnInit {
             genre: bookData.categories.join(', '),
             isbn: bookData.industryIdentifiers[0].identifier,
             id: bookData.industryIdentifiers[0].identifier,
-            likes_count: '',
+            likes_count: 0,
             description: bookData.description,
             comments: [],
             comments_count: '',
@@ -97,12 +106,14 @@ export class CreateBookComponent implements OnInit {
             ratingsCount: bookData.ratingsCount,
             added_date: new Date()
           };
-          console.log(this.newBook);
+          // console.log(this.newBook);
           this.toggleNewBookInfo = true;
         } else {
           alert('Error: Book not found!');
         }
       });
+    } else {
+      alert('Make sure your ISBN No. is valid and Try again!');
     }
   }
 
@@ -110,19 +121,21 @@ export class CreateBookComponent implements OnInit {
     if (this.addManualForm.valid) {
       formData.id = formData.isbn;
       formData.added_date = new Date();
-      formData.likes_count = '';
+      formData.likes_count = 0;
       formData.comments = [];
       formData.comments_count = '';
       formData.averageRating = '';
       formData.pageCount = '';
       formData.previewLink = '';
       formData.ratingsCount = '';
-      console.log(formData);
+      // console.log(formData);
       this.libraryService.addBookData(formData).subscribe(res => {
-        console.log(res);
+        // console.log(res);
         alert('Book added successfully');
+        this.addManualForm.reset();
       }, err => {
         alert('Error: Book already exists!');
+        this.addManualForm.reset();
       });
     } else {
       alert('Please check the missing fields and try again!');
@@ -131,21 +144,21 @@ export class CreateBookComponent implements OnInit {
 
   saveIsbnBook() {
     this.libraryService.addBookData(this.newBook).subscribe(res => {
-      console.log(res);
+      // console.log(res);
       alert('Book added successfully');
-      this.search = '';
       this.toggleNewBookInfo = false;
       this.newBook = {};
+      this.addIsbn.reset();
     }, err => {
       alert('Error: Book already exists!');
-      this.search = '';
       this.newBook = {};
       this.toggleNewBookInfo = false;
+      this.addIsbn.reset();
     });
   }
   cancelIsbnBook() {
     this.newBook = {};
-    this.search = '';
+    this.addIsbn.reset();
     this.toggleNewBookInfo = false;
   }
 }

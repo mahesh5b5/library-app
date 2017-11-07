@@ -7,4 +7,5 @@ export interface IUser {
   created?: Date;
   is_admin?: boolean;
   my_books?: IBook[];
+  liked_books?: IBook[];
 }

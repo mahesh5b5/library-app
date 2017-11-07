@@ -1,5 +1,5 @@
 import { NavigationEnd, Router } from '@angular/router';
-import { AuthService } from '../services/auth.service';
+import { UserService } from '../services/user.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -9,19 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
   sessionExists: {};
-  constructor(private router: Router, private authService: AuthService) {
-
+  constructor(private router: Router, private userService: UserService) {
     this.router = router;
     this.router.events.subscribe((changed) => {
-      this.sessionExists = this.authService.isLoggedIn();
+      this.sessionExists = this.userService.isLoggedIn();
     });
   }
 
   ngOnInit() {
-    this.sessionExists = this.authService.isLoggedIn();
+    this.sessionExists = this.userService.isLoggedIn();
   }
 
   logout() {
-    this.authService.closeSession();
+    this.userService.closeSession();
   }
 }

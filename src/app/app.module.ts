@@ -1,6 +1,6 @@
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { AuthService } from './services/auth.service';
+import { UserService } from './services/user.service';
 import { appRoutes } from './routes';
 import { RouterModule } from '@angular/router';
 import { Error404Component } from './error404/error404.component';
@@ -16,6 +16,16 @@ import { BooksComponent } from './books/books.component';
 import { BookDetailComponent } from './book-detail/book-detail.component';
 import { CreateBookComponent } from './create-book/create-book.component';
 import { MyBooksComponent } from './my-books/my-books.component';
+import { Angular2SocialLoginModule } from 'angular2-social-login';
+const providers = {
+  'google': {
+    'clientId': '357074255007-7sjgsjq98ctmjb5f46llsofbh49h5cia.apps.googleusercontent.com'
+  },
+  'facebook': {
+    'clientId': '179525502601808',
+    'apiVersion': 'v2.10'
+  }
+};
 
 @NgModule({
   declarations: [
@@ -34,10 +44,13 @@ import { MyBooksComponent } from './my-books/my-books.component';
     HttpModule,
     FormsModule,
     ReactiveFormsModule,
+    Angular2SocialLoginModule,
     RouterModule.forRoot(appRoutes),
     MDBBootstrapModule.forRoot()
   ],
-  providers: [LibraryService, AuthService],
+  providers: [LibraryService, UserService],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
+// Social login
+Angular2SocialLoginModule.loadProvidersScripts(providers);

@@ -4,9 +4,8 @@ import { BookDetailComponent } from './book-detail/book-detail.component';
 import { Routes } from '@angular/router';
 import { Error404Component } from './error404/error404.component';
 import { HomeComponent } from './home/home.component';
-
 export const appRoutes: Routes = [
-  { path: 'home', component: HomeComponent },
+  { path: 'home', component: HomeComponent, data: { title: 'My Calendar' } },
   { path: 'new-book', component: CreateBookComponent },
   { path: 'my-books', component: MyBooksComponent },
   { path: 'book-details/:id', component: BookDetailComponent },

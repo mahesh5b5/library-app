@@ -2,29 +2,36 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <!--Section: Products v.3-->
+                <div *ngIf="!bookList.length">
+                    <br/>
+                    <br/>
+                    <div class="col-md-12">
+                        <div class="card card-image" style="background-image: url(http://wallpaperspics.com/thumbs/25/5/gradient-background-252549.jpg);background-repeat: no-repeat;background-size: cover;">
+                            <div class="text-white text-center align-items-center py-5 px-4 my-5">
+                                <div class="text-center">
+                                    <h1 class="card-title pt-3 mb-5 font-bold"><strong>Opps! We've not yet added any books</strong></h1>
+                                    <p class="mx-5 mb-5">We currently don't have any books. Click below to add a book.</p>
+                                    <a [routerLink]="['/new-book']" class="btn btn-outline-white btn-rounded"><i class="fa fa-plus left"></i> Add book</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <section class="section pb-3" *ngIf="bookList.length">
-                    <!--Section heading-->
-                    <h3 class="section-heading h3 pt-4">Book List
-                        <select class="mdb-select pull-right">
-                          <option value="" disabled selected>Select Genre</option>
-                          <option value="1">Option 1</option>
-                          <option value="2">Option 2</option>
-                          <option value="3">Option 3</option>
-                      </select>
+                    <h3 class="section-heading h3 pt-4">Books
+                        <select (change)="subjectChanged()" name="selectedGenre" [(ngModel)]="selectedGenre" class="mdb-select pull-right">
+                          <option value="" selected>Select Genre</option>
+                          <option *ngFor="let genre of subjectsList" [value]="genre">{{genre}}</option>
+                        </select>
+                        <a *ngIf="showDelete" href="javascript:void(0);" (click)="toggleDelete = !toggleDelete"><i class="fa fa-gear"></i></a>
                     </h3>
                     <hr/>
-                    <!--Grid row-->
                     <div class="row">
-                        <!--Grid column-->
-                        <div class="col-lg-3 col-md-3 mb-r" *ngFor="let book of bookList">
-                            <app-books [book]="book"></app-books>
+                        <div class="col-lg-3 col-md-3 mb-r" *ngFor="let book of filteredBookList">
+                            <app-books (deleted)="onDeleteBook($event)" [book]="book" [delete]="toggleDelete"></app-books>
                         </div>
-                        <!--Grid column-->
                     </div>
-                    <!--Grid row-->
                 </section>
-                <!--Section: Products v.3-->
             </div>
         </div>
     </div>

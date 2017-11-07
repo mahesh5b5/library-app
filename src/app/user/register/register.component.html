@@ -2,7 +2,7 @@
     <div class="page-bg img-bg">
         <div class="container">
             <div class="row">
-                <div class="col-md-4 user-account-section z-depth-2 mx-auto">
+                <div class="col-xs-12 col-md-6 col-sm-8 col-lg-4 user-account-section z-depth-2 mx-auto">
                     <form [formGroup]="registerForm" autocomplete="off" (ngSubmit)="register(registerForm.value)">
                         <p class="h5 text-center mb-4">Create an Account</p>
                         <div class="md-form" [ngClass]="{'red lighten-4': !validateFullname()}">
@@ -19,7 +19,7 @@
                         </div>
                         <div class="form-group col-md-12">
                             <input type="checkbox" formControlName="is_admin" class="filled-in" id="isadmin">
-                            <label for="isadmin">Admin Access </label>
+                            <label for="isadmin"> <strong> Admin Access </strong></label>
                         </div>
                         <div class="text-center">
                             <button class="btn btn-indigo btn-block waves-light" mdbRippleRadius type="submit">Register</button>
@@ -27,8 +27,8 @@
                     </form>
                     <hr/>
                     <div class="text-center">
-                        <p>Already have an account?</p>
-                        <button type="button" class="btn btn-amber btn-md" (click)="goLogin()">Login</button>
+                        <p>Already have an account? &nbsp;&nbsp;<a href="javascript:void(0);" (click)="goLogin()"><strong>Login</strong></a></p>
+
                     </div>
 
                 </div>

@@ -2,7 +2,7 @@
     <div class="page-bg img-bg">
         <div class="container">
             <div class="row">
-                <div class="col-md-4 user-account-section z-depth-2 mx-auto">
+                <div class="col-xs-12 col-md-6 col-sm-8 col-lg-4 user-account-section z-depth-2 mx-auto">
                     <form autocomplete="off" [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
                         <p class="h5 text-center mb-4">Sign in</p>
                         <div class="md-form" [ngClass]="{'red lighten-4': !validateUsername()}">
@@ -19,12 +19,15 @@
                             <button class="btn btn-indigo btn-block waves-light" type="submit" mdbRippleRadius>Login</button>
                         </div>
                     </form>
+                    <br/>
+                    <div class="text-center">
+                        <button class="btn btn-danger btn-md" (click)="socialLogin('google')" type="button"><i class="fa fa-google-plus"></i> &nbsp;&nbsp;Sign in with google</button>
+                    </div>
                     <hr/>
                     <div class="text-center">
-                        <p>Don't have an account?</p>
-                        <button type="button" class="btn btn-amber btn-md" (click)="goRegister()">Register account</button>
-                    </div>
+                        <p>Don't have an account? &nbsp;&nbsp;<a href="javascript:void(0);" (click)="goRegister()"><strong>Create account</strong></a></p>
 
+                    </div>
                 </div>
             </div>
         </div>
