@@ -17,6 +17,8 @@ import { BookDetailComponent } from './book-detail/book-detail.component';
 import { CreateBookComponent } from './create-book/create-book.component';
 import { MyBooksComponent } from './my-books/my-books.component';
 import { Angular2SocialLoginModule } from 'angular2-social-login';
+import { SearchPipe } from './pipes/search.pipe';
+
 const providers = {
   'google': {
     'clientId': '357074255007-7sjgsjq98ctmjb5f46llsofbh49h5cia.apps.googleusercontent.com'
@@ -37,7 +39,8 @@ const providers = {
     BooksComponent,
     BookDetailComponent,
     CreateBookComponent,
-    MyBooksComponent
+    MyBooksComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,

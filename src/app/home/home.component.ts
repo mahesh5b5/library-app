@@ -25,6 +25,14 @@ export class HomeComponent implements OnInit {
     this.titleService.setTitle('Dashboard');
     this.getAllBooks();
   }
+  // searchChanged() {
+  //   console.log(this.searchBy);
+  //   if (this.searchBy === '1') {
+  //     this.searchable = { title: this.searchQuery, author: '' };
+  //   } else {
+  //     this.searchable.author = this.searchQuery;
+  //   }
+  // }
   subjectChanged() {
     console.log(this.selectedGenre);
     if (this.selectedGenre === '') {
@@ -33,7 +41,7 @@ export class HomeComponent implements OnInit {
       this.filteredBookList = _.filter(this.bookList, { genre: this.selectedGenre });
     }
   }
-  
+
   getAllBooks() {
     this.bookList = this.libraryService.getAllBooks().subscribe(data => {
       this.bookList = data;
