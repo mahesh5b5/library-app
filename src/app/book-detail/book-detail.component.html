@@ -15,52 +15,77 @@
                                     <div class="card-body col-md-9">
                                         <h4 class="card-title">{{book.title}} <span *ngIf="book.subtitle">- {{book.subtitle}}</span></h4>
                                         <div class="likes-section" *ngIf="userSession.userId">
-                                            <a *ngIf="!is_book_liked" href="javascript:void(0);" class="text-info" (click)="likeBook(book)"><i class="fa fa-thumbs-up"></i> Like</a>
-                                            <a *ngIf="is_book_liked" href="javascript:void(0);" class="text-primary" (click)="unlikeBook(book)"><i class="fa fa-thumbs-up"></i> Liked</a>
-                                            <a *ngIf="!is_added_self" href="javascript:void(0);" class="text-success" (click)="addToSelf(book)"><i class="fa fa-plus"></i> Borrow</a>
-                                            <a *ngIf="is_added_self" href="javascript:void(0);" class="text-danger" (click)="removeFromSelf(book)"><i class="fa fa-minus"></i> Return</a>
+
+                                            <a *ngIf="!is_book_liked" href="javascript:void(0);" class="text-muted" (click)="likeBook(book)">
+                                                <i class="fa fa-heart-o"></i> Like</a>
+                                            <a *ngIf="is_book_liked" href="javascript:void(0);" class="text-danger" (click)="unlikeBook(book)">
+                                                <i class="fa fa-heart"></i> Liked</a>
+                                            <a *ngIf="!is_added_self" href="javascript:void(0);" class="text-muted" (click)="addToSelf(book)">
+                                                <i class="fa fa-bookmark-o"></i> Borrow</a>
+                                            <a *ngIf="is_added_self" href="javascript:void(0);" class="text-success" (click)="removeFromSelf(book)">
+                                                <i class="fa fa-bookmark"></i> Return</a>
+
                                         </div>
                                         <table class="table table-responsive table-striped">
                                             <tbody>
                                                 <tr>
-                                                    <td width="150px"><strong>Description</strong></td>
+                                                    <td width="150px">
+                                                        <strong>Description</strong>
+                                                    </td>
                                                     <td>{{book.description}}</td>
                                                 </tr>
                                                 <tr *ngIf="book.previewLink">
-                                                    <td><strong>Preview Link</strong></td>
-                                                    <td><a [href]="book.previewLink" target="_blank">{{book.previewLink}}</a></td>
+                                                    <td>
+                                                        <strong>Preview Link</strong>
+                                                    </td>
+                                                    <td>
+                                                        <a [href]="book.previewLink" target="_blank">{{book.previewLink}}</a>
+                                                    </td>
                                                 </tr>
                                                 <tr>
-                                                    <td><strong>Genre</strong></td>
+                                                    <td>
+                                                        <strong>Genre</strong>
+                                                    </td>
                                                     <td>{{book.genre}}</td>
                                                 </tr>
                                                 <tr>
-                                                    <td><strong>Author</strong></td>
+                                                    <td>
+                                                        <strong>Author</strong>
+                                                    </td>
                                                     <td>{{book.author}}</td>
                                                 </tr>
                                                 <tr>
-                                                    <td><strong>ISBN</strong></td>
+                                                    <td>
+                                                        <strong>ISBN</strong>
+                                                    </td>
                                                     <td>{{book.isbn}}</td>
                                                 </tr>
                                                 <tr *ngIf="book.language">
-                                                    <td><strong>Language</strong></td>
+                                                    <td>
+                                                        <strong>Language</strong>
+                                                    </td>
                                                     <td>{{book.language}}</td>
                                                 </tr>
                                                 <tr *ngIf="book.publisher">
-                                                    <td><strong>Publisher</strong></td>
+                                                    <td>
+                                                        <strong>Publisher</strong>
+                                                    </td>
                                                     <td>{{book.publisher}}</td>
                                                 </tr>
                                                 <tr *ngIf="book.publishedDate">
-                                                    <td><strong>Published Date</strong></td>
+                                                    <td>
+                                                        <strong>Published Date</strong>
+                                                    </td>
                                                     <td>{{book?.publishedDate | date}}</td>
                                                 </tr>
                                                 <tr>
-                                                    <td><strong>Added Date</strong></td>
+                                                    <td>
+                                                        <strong>Added Date</strong>
+                                                    </td>
                                                     <td>{{book?.added_date | date}}</td>
                                                 </tr>
                                             </tbody>
                                         </table>
-
                                     </div>
                                 </div>
                             </div>
@@ -91,7 +116,6 @@
                                             </div>
                                         </form>
                                     </div>
-
                                     <div class="card-body text-center col-md-12" *ngIf="!book.comments.length">
                                         <p> No Reviews yet. Be the first one to Review!</p>
                                     </div>
@@ -102,9 +126,12 @@
                                                 <img class="rounded-circle" width="30" src="../../assets/img/user.png" alt="Generic placeholder image">
                                             </a>
                                             <div class="media-body">
-                                                <h4 class="media-heading">{{comment.user}} <em class="pull-right"><small>{{comment.added | date}}</small></em></h4>
-                                                <p>{{comment.comment}}
-                                                </p>
+                                                <h4 class="media-heading">{{comment.user}}
+                                                    <em class="pull-right">
+                                                        <small>{{comment.added | date}}</small>
+                                                    </em>
+                                                </h4>
+                                                <p>{{comment.comment}}</p>
                                             </div>
                                         </div>
                                     </div>

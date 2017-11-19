@@ -51,8 +51,58 @@
       "password": "",
       "is_admin": false,
       "created": "2017-11-07T08:32:59.183Z",
-      "my_books": [],
-      "liked_books": []
+      "my_books": [
+        {
+          "author": "Abraham Eraly",
+          "title": "Emperors of the Peacock Throne",
+          "imageUrl": "http://books.google.com/books/content?id=04ellRQx4nMC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+          "genre": "India",
+          "isbn": "0141001437",
+          "id": "0141001437",
+          "likes_count": 0,
+          "description": "A Stirring Account Of One Of The World S Greatest Empires In December 1525, Zahir-Ud-Din Babur, Descended From Chengiz Khan And Timur Lenk, Crossed The Indus River Into The Punjab With A Modest Army And Some Cannon. At Panipat, Five Months Later, He Fought The Most Important Battle Of His Life And Routed The Mammoth Army Of Sultan Ibrahim Lodi, The Afghan Ruler Of Hindustan. Mughal Rule In India Had Begun. It Was To Continue For Over Three Centuries, Shaping India For All Time. In This Definitive Biography Of The Great Mughals, Abraham Eraly Reclaims The Right To Set Down History As A Chronicle Of Flesh-And-Blood People. Bringing To His Task The Objectivity Of A Scholar And The High Imagination Of A Master Storyteller, He Recreates The Lives Of Babur, The Intrepid Pioneer; The Dreamer Humayun; Akbar, The Greatest And Most Enigmatic Of The Mughals; The Aesthetes Jehangir And Shah Jahan; And The Dour And Determined Aurangzeb.",
+          "comments": [
+            {
+              "comment": "heilloo",
+              "added": "2017-11-12T17:10:48.709Z",
+              "user": "maheshmahigoogle"
+            }
+          ],
+          "comments_count": "",
+          "averageRating": 4,
+          "language": "en",
+          "pageCount": 555,
+          "subtitle": "The Saga of the Great Mughals",
+          "previewLink": "http://books.google.co.in/books?id=04ellRQx4nMC&printsec=frontcover&dq=isbn:0141001437&hl=&cd=1&source=gbs_api",
+          "publishedDate": "2000",
+          "publisher": "Penguin Books India",
+          "ratingsCount": 1,
+          "added_date": "2017-11-07T10:35:39.471Z"
+        },
+        {
+          "author": "Alvaro Macieira-Coelho",
+          "title": "Biology of Aging",
+          "imageUrl": "http://books.google.com/books/content?id=4I_ZdA9jiPwC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+          "genre": "Medical",
+          "isbn": "3540438270",
+          "id": "3540438270",
+          "likes_count": 0,
+          "description": "The survival of the human species has improved significantly in modern times. During the last century, the mean survival of human populations in developed countries has increased more than during the preceding 5000 years. This improvement in survival was accompanied by an increase in the number of active years. In other words, the increase in mean life span was accompanied by an increase in health span. This is now accentuated by progress in medicine reducing the impact of physiologic events such as menopause and of patho logical processes such as atherosclerosis. Up to now,research on aging, whether theoretical or experimental, has not contributed to improvement in human survival. Actually, there is a striking contrast between these significant modifications in survival and the present knowledge of the mechanisms of human aging. Revealed by this state of affairs are the profound disagreements between gerontologists in regard to the way oflooking at the aging process. The definition of aging itself is difficult to begin with because of the variability of how it occurs in different organisms.",
+          "comments": [],
+          "comments_count": "",
+          "language": "en",
+          "pageCount": 192,
+          "previewLink": "http://books.google.co.in/books?id=4I_ZdA9jiPwC&printsec=frontcover&dq=isbn:3540438270&hl=&cd=1&source=gbs_api",
+          "publishedDate": "2002-10-21",
+          "publisher": "Springer Science & Business Media",
+          "added_date": "2017-11-07T10:43:27.141Z"
+        }
+      ],
+      "liked_books": [
+        "0141001437",
+        "0674884698",
+        "3540438270"
+      ]
     },
     {
       "id": "MaheshKumarfacebook",
@@ -95,7 +145,13 @@
       "id": "0141001437",
       "likes_count": 0,
       "description": "A Stirring Account Of One Of The World S Greatest Empires In December 1525, Zahir-Ud-Din Babur, Descended From Chengiz Khan And Timur Lenk, Crossed The Indus River Into The Punjab With A Modest Army And Some Cannon. At Panipat, Five Months Later, He Fought The Most Important Battle Of His Life And Routed The Mammoth Army Of Sultan Ibrahim Lodi, The Afghan Ruler Of Hindustan. Mughal Rule In India Had Begun. It Was To Continue For Over Three Centuries, Shaping India For All Time. In This Definitive Biography Of The Great Mughals, Abraham Eraly Reclaims The Right To Set Down History As A Chronicle Of Flesh-And-Blood People. Bringing To His Task The Objectivity Of A Scholar And The High Imagination Of A Master Storyteller, He Recreates The Lives Of Babur, The Intrepid Pioneer; The Dreamer Humayun; Akbar, The Greatest And Most Enigmatic Of The Mughals; The Aesthetes Jehangir And Shah Jahan; And The Dour And Determined Aurangzeb.",
-      "comments": [],
+      "comments": [
+        {
+          "comment": "heilloo",
+          "added": "2017-11-12T17:10:48.709Z",
+          "user": "maheshmahigoogle"
+        }
+      ],
       "comments_count": "",
       "averageRating": 4,
       "language": "en",
