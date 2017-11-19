@@ -15,24 +15,24 @@ export class UserService {
   userLogin(data): Observable<IUser[]> {
     return this.http.get('http://localhost:3000/users?username=' + data.username + '&password=' + data.password)
       .map((response: Response) => {
-        return response.json();
+        return <IUser[]>response.json();
       }).catch(this.handleError);
   }
 
   getUserById(username): Observable<IUser[]> {
     return this.http.get('http://localhost:3000/users?username=' + username)
       .map((response: Response) => {
-        return response.json();
+        return <IUser[]>response.json();
       }).catch(this.handleError);
   }
   createUser(data): Observable<IUser> {
     return this.http.post('http://localhost:3000/users', data).map((response: Response) => {
-      return response.json();
+      return <IUser>response.json();
     }).catch(this.handleError);
   }
   updateUser(data, id): Observable<IUser> {
     return this.http.patch('http://localhost:3000/users/' + id, data).map((response: Response) => {
-      return response.json();
+      return <IUser>response.json();
     }).catch(this.handleError);
   }
   closeSession() {

@@ -23,7 +23,7 @@
                           <option value="" selected>Select Genre</option>
                           <option *ngFor="let genre of subjectsList" [value]="genre">{{genre}}</option>
                         </select>
-                        <a *ngIf="showDelete" href="javascript:void(0);" (click)="toggleDelete = !toggleDelete"><i class="fa fa-gear"></i></a>
+                        <a *ngIf="showDelete" title="Toggle Delete" href="javascript:void(0);" (click)="toggleDelete = !toggleDelete"><i class="fa fa-gear"></i></a>
                     </h3>
                     <hr/>
                     <div class="row">

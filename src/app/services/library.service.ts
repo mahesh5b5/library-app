@@ -27,12 +27,12 @@ export class LibraryService {
   }
   updateBookData(data, bookId): Observable<IBook> {
     return this.http.patch('http://localhost:3000/books/' + bookId, data).map((response: Response) => {
-      return response.json();
+      return <IBook>response.json();
     }).catch(this.handleError);
   }
   addBookData(data): Observable<IBook> {
     return this.http.post('http://localhost:3000/books', data).map((response: Response) => {
-      return response.json();
+      return <IBook>response.json();
     }).catch(this.handleError);
   }
   deleteBookById(id) {
