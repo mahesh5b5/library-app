@@ -14,7 +14,7 @@
                                     </div>
                                     <div class="card-body col-md-9">
                                         <h4 class="card-title">{{book.title}} <span *ngIf="book.subtitle">- {{book.subtitle}}</span></h4>
-                                        <div class="likes-section">
+                                        <div class="likes-section" *ngIf="userSession.userId">
                                             <a *ngIf="!is_book_liked" href="javascript:void(0);" class="text-info" (click)="likeBook(book)"><i class="fa fa-thumbs-up"></i> Like</a>
                                             <a *ngIf="is_book_liked" href="javascript:void(0);" class="text-primary" (click)="unlikeBook(book)"><i class="fa fa-thumbs-up"></i> Liked</a>
                                             <a *ngIf="!is_added_self" href="javascript:void(0);" class="text-success" (click)="addToSelf(book)"><i class="fa fa-plus"></i> Borrow</a>
@@ -64,46 +64,48 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card comments-section">
-                                <div class="card-body col-md-12 text-right" *ngIf="!showCommentForm">
-                                    <button class="btn btn-indigo" (click)="showCommentForm=true">Add Review</button>
-                                </div>
-                                <div class="card-body" *ngIf="showCommentForm">
-                                    <h4 class="h4">Add Review</h4>
-                                    <form (ngSubmit)="addComment(addCommentForm.value, book.id)" #addCommentForm="ngForm">
-                                        <div class="media mb-2">
+                            <div *ngIf="userSession.userId">
+                                <div class="card comments-section">
+                                    <div class="card-body col-md-12 text-right" *ngIf="!showCommentForm">
+                                        <button class="btn btn-indigo" (click)="showCommentForm=true">Add Review</button>
+                                    </div>
+                                    <div class="card-body" *ngIf="showCommentForm">
+                                        <h4 class="h4">Add Review</h4>
+                                        <form (ngSubmit)="addComment(addCommentForm.value, book.id)" #addCommentForm="ngForm">
+                                            <div class="media mb-2">
+                                                <a class="media-left waves-light">
+                                                    <img class="rounded-circle" width="30" src="../../assets/img/user.png" alt="Generic placeholder image">
+                                                </a>
+                                                <div class="media-body">
+                                                    <h4 class="media-heading">{{currentUser}}</h4>
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <textarea [(ngModel)]="comment" required name="comment"></textarea>
+                                                        </div>
+                                                        <div class="col-md-12 text-right">
+                                                            <button [disabled]="addCommentForm.invalid" class="btn btn-indigo" type="submit">Submit</button>
+                                                            <button class="btn btn-blue-grey" (click)="showCommentForm=false;comment=''">Cancel</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                    <div class="card-body text-center col-md-12" *ngIf="!book.comments.length">
+                                        <p> No Reviews yet. Be the first one to Review!</p>
+                                    </div>
+                                    <div class="col-md-12 card-body" *ngIf="book.comments.length">
+                                        <h4 class="h4">Reviews</h4>
+                                        <div class="media mb-2" *ngFor="let comment of book.comments">
                                             <a class="media-left waves-light">
                                                 <img class="rounded-circle" width="30" src="../../assets/img/user.png" alt="Generic placeholder image">
                                             </a>
                                             <div class="media-body">
-                                                <h4 class="media-heading">{{currentUser}}</h4>
-                                                <div class="row">
-                                                    <div class="col-md-12">
-                                                        <textarea [(ngModel)]="comment" required name="comment"></textarea>
-                                                    </div>
-                                                    <div class="col-md-12 text-right">
-                                                        <button [disabled]="addCommentForm.invalid" class="btn btn-indigo" type="submit">Submit</button>
-                                                        <button class="btn btn-blue-grey" (click)="showCommentForm=false;comment=''">Cancel</button>
-                                                    </div>
-                                                </div>
+                                                <h4 class="media-heading">{{comment.user}} <em class="pull-right"><small>{{comment.added | date}}</small></em></h4>
+                                                <p>{{comment.comment}}
+                                                </p>
                                             </div>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="card-body text-center col-md-12" *ngIf="!book.comments.length">
-                                    <p> No Reviews yet. Be the first one to Review!</p>
-                                </div>
-                                <div class="col-md-12 card-body" *ngIf="book.comments.length">
-                                    <h4 class="h4">Reviews</h4>
-                                    <div class="media mb-2" *ngFor="let comment of book.comments">
-                                        <a class="media-left waves-light">
-                                            <img class="rounded-circle" width="30" src="../../assets/img/user.png" alt="Generic placeholder image">
-                                        </a>
-                                        <div class="media-body">
-                                            <h4 class="media-heading">{{comment.user}} <em class="pull-right"><small>{{comment.added | date}}</small></em></h4>
-                                            <p>{{comment.comment}}
-                                            </p>
-
                                         </div>
                                     </div>
                                 </div>

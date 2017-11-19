@@ -11,6 +11,7 @@ import { Title } from '@angular/platform-browser';
 })
 export class BookDetailComponent implements OnInit {
   book: any;
+  userSession: any;
   userData: any;
   comment = '';
   is_book_liked = false;
@@ -20,7 +21,11 @@ export class BookDetailComponent implements OnInit {
     private libraryService: LibraryService, private userService: UserService) { }
 
   ngOnInit() {
-    this.getUserData();
+    this.userSession = this.userService.isLoggedIn();
+    console.log(this.userSession);
+    if (this.userSession.userId) {
+      this.getUserData();
+    }
     this.getBookDetails();
   }
   getBookDetails() {

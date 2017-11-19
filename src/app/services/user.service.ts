@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class UserService {
-
+  loggedIn = { admin: false, userId: false, session: false };
   baseUrl = 'http://localhost:3000/';
 
   constructor(private http: Http, private router: Router, private social: AuthService) { }
@@ -36,6 +36,7 @@ export class UserService {
     }).catch(this.handleError);
   }
   closeSession() {
+    this.loggedIn = { admin: false, userId: false, session: false };
     localStorage.clear();
     try {
       this.social.logout().subscribe(
@@ -45,20 +46,20 @@ export class UserService {
     } catch (e) {
       console.log('social err', e);
     }
-
     alert('User logged out successfully!');
     this.router.navigateByUrl('/user/login');
+    return this.loggedIn;
   }
   isLoggedIn() {
-    const loggedIn = { admin: false, userId: false, session: false };
+
     if (localStorage.hasOwnProperty('userId')) {
       if (localStorage.hasOwnProperty('is_admin')) {
-        loggedIn.admin = localStorage.is_admin;
+        this.loggedIn.admin = localStorage.is_admin;
       }
-      loggedIn.userId = localStorage.userId;
-      loggedIn.session = true;
+      this.loggedIn.userId = localStorage.userId;
+      this.loggedIn.session = true;
     }
-    return loggedIn;
+    return this.loggedIn;
   }
   private handleError(error: Response) {
     return Observable.throw(error.status);
