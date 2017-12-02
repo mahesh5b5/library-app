@@ -1,5 +1,6 @@
+import { UserService } from '../services/user.service';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { RouterTestingModule } from '@angular/router/testing';
 import { MenuComponent } from './menu.component';
 
 describe('MenuComponent', () => {
@@ -8,9 +9,11 @@ describe('MenuComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MenuComponent ]
+      declarations: [MenuComponent],
+      imports: [RouterTestingModule],
+      providers: [UserService]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
