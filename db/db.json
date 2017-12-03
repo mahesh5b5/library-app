@@ -49,7 +49,7 @@
       "fullname": "mahesh mahi",
       "username": "maheshmahigoogle",
       "password": "",
-      "is_admin": false,
+      "is_admin": true,
       "created": "2017-11-07T08:32:59.183Z",
       "my_books": [
         {
@@ -135,33 +135,6 @@
       "publisher": "Har-Anand Publications",
       "ratingsCount": 1,
       "added_date": "2017-11-07T10:35:19.297Z"
-    },
-    {
-      "author": "Abraham Eraly",
-      "title": "Emperors of the Peacock Throne",
-      "imageUrl": "http://books.google.com/books/content?id=04ellRQx4nMC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-      "genre": "India",
-      "isbn": "0141001437",
-      "id": "0141001437",
-      "likes_count": 0,
-      "description": "A Stirring Account Of One Of The World S Greatest Empires In December 1525, Zahir-Ud-Din Babur, Descended From Chengiz Khan And Timur Lenk, Crossed The Indus River Into The Punjab With A Modest Army And Some Cannon. At Panipat, Five Months Later, He Fought The Most Important Battle Of His Life And Routed The Mammoth Army Of Sultan Ibrahim Lodi, The Afghan Ruler Of Hindustan. Mughal Rule In India Had Begun. It Was To Continue For Over Three Centuries, Shaping India For All Time. In This Definitive Biography Of The Great Mughals, Abraham Eraly Reclaims The Right To Set Down History As A Chronicle Of Flesh-And-Blood People. Bringing To His Task The Objectivity Of A Scholar And The High Imagination Of A Master Storyteller, He Recreates The Lives Of Babur, The Intrepid Pioneer; The Dreamer Humayun; Akbar, The Greatest And Most Enigmatic Of The Mughals; The Aesthetes Jehangir And Shah Jahan; And The Dour And Determined Aurangzeb.",
-      "comments": [
-        {
-          "comment": "heilloo",
-          "added": "2017-11-12T17:10:48.709Z",
-          "user": "maheshmahigoogle"
-        }
-      ],
-      "comments_count": "",
-      "averageRating": 4,
-      "language": "en",
-      "pageCount": 555,
-      "subtitle": "The Saga of the Great Mughals",
-      "previewLink": "http://books.google.co.in/books?id=04ellRQx4nMC&printsec=frontcover&dq=isbn:0141001437&hl=&cd=1&source=gbs_api",
-      "publishedDate": "2000",
-      "publisher": "Penguin Books India",
-      "ratingsCount": 1,
-      "added_date": "2017-11-07T10:35:39.471Z"
     },
     {
       "author": "Alvaro Macieira-Coelho",
